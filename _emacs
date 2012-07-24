@@ -1,4 +1,4 @@
-(setenv "HOME" "D:/Tools/emacs-23.4")
+ï»¿(setenv "HOME" "D:/Tools/emacs-23.4")
 (setenv "PATH" "D:/Tools/emacs-23.4")
 
 (add-to-list 'load-path "d:/Tools/emacs-23.4/site-lisp/weibo")
@@ -38,11 +38,11 @@
 (setq display-time-24hr-format t)  
 (setq display-time-day-and-date t)
 
-;;À¨ºÅÆ¥ÅäÊ±ÏÔÊ¾ÁíÍâÒ»±ßµÄÀ¨ºÅ£¬¶ø²»ÊÇ·³ÈËµÄÌøµ½ÁíÒ»¸öÀ¨ºÅ¡£
+;;æ‹¬å·åŒ¹é…æ—¶æ˜¾ç¤ºå¦å¤–ä¸€è¾¹çš„æ‹¬å·ï¼Œè€Œä¸æ˜¯çƒ¦äººçš„è·³åˆ°å¦ä¸€ä¸ªæ‹¬å·ã€‚
 (show-paren-mode t)
 (setq show-paren-style 'parentheses)
 
-;;¹â±ê¿¿½üÊó±êÖ¸ÕëÊ±£¬ÈÃÊó±êÖ¸Õë×Ô¶¯ÈÃ¿ª£¬±ğµ²×¡ÊÓÏß¡£
+;;å…‰æ ‡é è¿‘é¼ æ ‡æŒ‡é’ˆæ—¶ï¼Œè®©é¼ æ ‡æŒ‡é’ˆè‡ªåŠ¨è®©å¼€ï¼Œåˆ«æŒ¡ä½è§†çº¿ã€‚
 (mouse-avoidance-mode 'animate)
 
 ;; Let Emacs display pictures
