@@ -98,7 +98,7 @@
           (lambda ()
             (list "All")))
 
-; 设置tabbar外观
+;; 设置tabbar外观
 ;; 设置默认主题: 字体, 背景和前景颜色，大小
 (set-face-attribute 'tabbar-default nil
 					:family "DejaVu Sans Mono"
