@@ -2,6 +2,7 @@
 (add-to-list 'load-path "~/.emacs.d")
 (add-to-list 'load-path "~/.emacs.d/weibo")
 
+
 ;; =============== Coding and Language ===============>
 (set-selection-coding-system 'utf-8)
 (set-clipboard-coding-system 'utf-8)
@@ -79,7 +80,46 @@
 
 ;; 启用 ibuffer
 (require 'ibuffer)
-(global-set-key ( kbd "C-x C-b ")' ibuffer)
+(global-set-key [f4] 'ibuffer)
 
-;; Enable weibo module
+;; Enable weibo
 (require 'weibo)
+
+;; Tabbar settings
+(require 'tabbar)
+(tabbar-mode)
+(global-set-key (kbd "M-q") 'tabbar-backward)
+(global-set-key (kbd "M-<tab>") 'tabbar-forward)
+
+(setq tabbar-buffer-groups-function
+          (lambda ()
+            (list "All")))
+
+; 设置tabbar外观
+;; 设置默认主题: 字体, 背景和前景颜色，大小
+(set-face-attribute 'tabbar-default nil
+					:family "DejaVu Sans Mono"
+					:background "gray80"
+					:foreground "gray30"
+					:height 1.0
+					)
+;; 设置左边按钮外观：外框框边大小和颜色
+(set-face-attribute 'tabbar-button nil
+					:inherit 'tabbar-default
+					:box '(:line-width 1 :color "yellow70")
+					)
+;; 设置当前tab外观：颜色，字体，外框大小和颜色
+(set-face-attribute 'tabbar-selected nil
+					:inherit 'tabbar-default
+					:foreground "DarkGreen"
+					:background "LightGoldenrod"
+					:box '(:line-width 2 :color "DarkGoldenrod")
+					:overline "black"
+					:underline "black"
+					:weight 'bold
+					)
+;; 设置非当前tab外观：外框大小和颜色
+(set-face-attribute 'tabbar-unselected nil
+					:inherit 'tabbar-default
+					:box '(:line-width 2 :color "#00B2BF")
+					)
