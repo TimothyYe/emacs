@@ -1,3 +1,6 @@
+;; Timothy's Emacs configuration file
+;; http://www.xiaozhou.net
+
 ;; ============= add load path ================
 (add-to-list 'load-path "~/.emacs.d")
 (add-to-list 'load-path "~/.emacs.d/weibo")
