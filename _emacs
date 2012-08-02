@@ -114,6 +114,10 @@
 					:inherit 'tabbar-default
 					:box '(:line-width 2 :color "#00B2BF")
 					)
+
+;; 默认进入text-mode，而不是没有什么功能的fundamental-mode  
+(setq default-major-mode 'text-mode)  
+(add-hook 'text-mode-hook 'turn-on-auto-fill)  
 					
 ;; 启动0.5秒后自动最大化 （windows下）
 (run-with-idle-timer 0.5 nil 'w32-send-sys-command 61488)
