@@ -1,8 +1,9 @@
 ﻿(setenv "HOME" "D:/Tools/emacs-23.4")
 (setenv "PATH" "D:/Tools/emacs-23.4")
 
-(add-to-list 'load-path "d:/Tools/emacs-23.4/site-lisp/weibo")
-(add-to-list 'load-path "d:/Tools/emacs-23.4/site-lisp/color-theme")
+;;(add-to-list 'load-path "d:/Tools/emacs-23.4/site-lisp/weibo")
+(add-to-list 'load-path "D:/MyCode/GitHub/emacs/.emacs.d")
+(add-to-list 'load-path "D:/MyCode/GitHub/emacs/.emacs.d/color-theme")
 
 ;;set the default file path
 (setq default-directory "~/")
@@ -58,11 +59,11 @@
 ;; Enable ibuffer module
 ;; File: ibuffer.el
 (require 'ibuffer)
-(global-set-key (kbd "C-x C-b") 'ibuffer)
+(global-set-key [f4] 'ibuffer)
 
 ;; Enable weibo module
 ;; weibo.el and other files
-(require 'weibo)
+;;(require 'weibo)
 
 ;; Enable color-theme-ahei
 ;; File: color-theme-ahei.el
@@ -74,3 +75,42 @@
 
 ;; Auto reload editing file
 (global-auto-revert-mode)
+
+;; Tabbar settings
+(require 'tabbar)
+(tabbar-mode)
+(global-set-key (kbd "C-`") 'tabbar-backward)
+(global-set-key (kbd "C-<tab>") 'tabbar-forward)
+
+(setq tabbar-buffer-groups-function
+          (lambda ()
+            (list "All")))
+
+;; 设置tabbar外观
+;; 设置默认主题: 字体, 背景和前景颜色，大小
+(set-face-attribute 'tabbar-default nil
+					:family "DejaVu Sans Mono"
+					:background "gray80"
+					:foreground "gray30"
+					:height 1.0
+					)
+;; 设置左边按钮外观：外框框边大小和颜色
+(set-face-attribute 'tabbar-button nil
+					:inherit 'tabbar-default
+					:box '(:line-width 1 :color "yellow70")
+					)
+;; 设置当前tab外观：颜色，字体，外框大小和颜色
+(set-face-attribute 'tabbar-selected nil
+					:inherit 'tabbar-default
+					:foreground "DarkGreen"
+					:background "LightGoldenrod"
+					:box '(:line-width 2 :color "DarkGoldenrod")
+					:overline "black"
+					:underline "black"
+					:weight 'bold
+					)
+;; 设置非当前tab外观：外框大小和颜色
+(set-face-attribute 'tabbar-unselected nil
+					:inherit 'tabbar-default
+					:box '(:line-width 2 :color "#00B2BF")
+					)
