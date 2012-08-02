@@ -29,7 +29,7 @@
 (setq column-number-mode t)
 
 ;; Remove tool bar
-(tool-bar-mode nil)
+(tool-bar-mode)
 
 ;; Remove scroll bar
 (scroll-bar-mode nil)
@@ -114,3 +114,6 @@
 					:inherit 'tabbar-default
 					:box '(:line-width 2 :color "#00B2BF")
 					)
+					
+;; 启动0.5秒后自动最大化 （windows下）
+(run-with-idle-timer 0.5 nil 'w32-send-sys-command 61488)
